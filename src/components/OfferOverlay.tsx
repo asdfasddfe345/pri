@@ -1,6 +1,6 @@
 // src/components/OfferOverlay.tsx
 import React from 'react';
-import { X, Gift, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Sparkles, ArrowRight } from 'lucide-react';
 
 interface OfferOverlayProps {
   isOpen: boolean;
@@ -8,7 +8,11 @@ interface OfferOverlayProps {
   onAction?: () => void;
 }
 
-export const OfferOverlay: React.FC<OfferOverlayProps> = ({ isOpen, onClose, onAction }) => {
+export const OfferOverlay: React.FC<OfferOverlayProps> = ({
+  isOpen,
+  onClose,
+  onAction,
+}) => {
   if (!isOpen) return null;
 
   const handleActionClick = () => {
@@ -32,20 +36,22 @@ export const OfferOverlay: React.FC<OfferOverlayProps> = ({ isOpen, onClose, onA
         {/* Thumbnail Image */}
         <div className="mb-6">
           <img
-            src="https://res.cloudinary.com/dvue2zenh/image/upload/v1756304933/aknwm73c5cc0elpcfgll.png" // Example Pexels image URL for Vinayaka Chavithi
-            alt="Vinayaka Chavithi Offer"
+            src="https://res.cloudinary.com/dvue2zenh/image/upload/v1756304933/teachers_day_banner.png"
+            alt="Teacher’s Day Offer"
             className="w-full h-40 object-cover rounded-2xl shadow-md mx-auto"
           />
         </div>
 
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          🎉 Vinayaka Chavithi Offer! 🎉
+          🍎 Happy Teacher’s Day! 🍎
         </h2>
 
         {/* Description */}
         <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-          Celebrate with us! Get an additional 50% OFF on our Career Pro Max (₹10,000) plan using code <strong className="text-purple-600 dark:text-neon-purple-400">VNK50</strong>. Limited time offer!
+          Honor knowledge and growth! Get a flat 40% OFF on our Career Boost+ (₹7,500) plan
+          using code{' '}
+          <strong className="text-green-600 dark:text-green-400">TEACH40</strong>. Today only!
         </p>
 
         {/* Call to Action */}
@@ -60,7 +66,7 @@ export const OfferOverlay: React.FC<OfferOverlayProps> = ({ isOpen, onClose, onA
 
         {/* Small print */}
         <div className="mt-4 text-xs text-gray-500 dark:text-gray-400">
-          Offer valid until September 10, 2025. Terms and conditions apply.
+          Offer valid only on September 5, 2025. Terms and conditions apply.
         </div>
       </div>
     </div>
